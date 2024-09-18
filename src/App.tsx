@@ -8,12 +8,12 @@ import {Button, Card, Flex, Typography} from "antd";
 function App() {
     const [data, setData] = useState<any>([]);
     const [loading, setLoading] = useState(true);
-    const [index, setIndex] = useState(0)
+    const [index, setIndex] = useState(0);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://my_server-farhanshn.ladeapp.com/data');
+                const response = await fetch('https://server-farhanshn.ladeapp.com/data');
 
                 if (!response.ok) {
 
