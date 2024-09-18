@@ -3,7 +3,6 @@
 import {useEffect, useState} from 'react'
 import './App.css'
 import {Button, Card, Flex, Typography} from "antd";
-import '@fontsource/poppins';
 
 
 function App() {
