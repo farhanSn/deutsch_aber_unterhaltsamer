@@ -19,7 +19,6 @@ function App() {
                 }
 
                 const result = await response.json();
-                console.log({result})
                 setData(result.data);
                 setLoading(false);
             } catch (error) {
@@ -29,11 +28,8 @@ function App() {
 
         fetchData();
 
-        console.log({data})
-
     }, []);
 
-    console.log({data, index})
 
 
   return loading ? <div>loading...</div> : (
@@ -42,7 +38,7 @@ function App() {
               <p>{data[index].def}</p>
           </Card>
           <Flex style={{ gap: 6, marginTop: 'auto', marginBottom: 60, flexDirection: "column"}} >
-              <Flex style={{justifyContent: "space-around", gap: 24}} horizontal>
+              <Flex style={{justifyContent: "space-around", gap: 24, flexDirection: "row"}}>
                   <Button style={{flex:1, paddingBlock: 24}} onClick={()=> setIndex((i)=> {
                       if(i-1<0){
                           console.log(data.length -1)
@@ -60,7 +56,7 @@ function App() {
                       </Typography>
                   </Button>
               </Flex>
-              <Flex style={{justifyContent: "center", gap: 6}} horizontal>
+              <Flex style={{justifyContent: "center", gap: 6, flexDirection: "row"}} >
                   <Typography style={{fontWeight: 600, fontSize:20}}>
                       {index+1}
                   </Typography>
