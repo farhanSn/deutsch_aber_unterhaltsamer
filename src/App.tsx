@@ -1,3 +1,5 @@
+/* eslint no-use-before-define: 0 */  // --> OFF
+
 import {useEffect, useState} from 'react'
 import './App.css'
 import {Button, Card, Flex, Typography} from "antd";
