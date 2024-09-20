@@ -2,9 +2,9 @@
 import './App.css'
 import {useEffect, useState} from "react";
 import Loading from "./pages/loading";
-import Global from "./pages/global/index.jsx";
-import Courses from "./pages/courses/index.jsx";
-import Question from "././pages/courses/question.jsx";
+import Global from "./pages/global";
+import Courses from "./pages/courses";
+import Question from "./pages/courses/question.tsx";
 import {Route, Routes} from "react-router-dom";
 
 

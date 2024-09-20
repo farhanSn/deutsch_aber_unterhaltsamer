@@ -1,6 +1,6 @@
 /* eslint no-use-before-define: 0 */  // --> OFF
 import {Button, Card, Flex, Modal, Typography} from "antd";
-import React, {useEffect, useState} from "react";
+import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
 import { LuHelpCircle } from "react-icons/lu";
 
@@ -8,12 +8,13 @@ import { LuHelpCircle } from "react-icons/lu";
 const Question = () => {
     const {state} = useLocation();
     const {lektion} = state;
+    console.log({lektion})
     const [loading, setLoading] = useState(true);
     const [index, setIndex] = useState(0);
     const [choices, setChoices] = useState([0]);
     const [showAnswer, setShowAnswer] = useState(false);
     const [selectedIndex, setSelectedIndex] = useState(0);
-    const [questions, setQuestions] = useState([]);
+    const [questions, setQuestions] = useState<any[]>([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     const showModal = () => {
@@ -57,17 +58,17 @@ const Question = () => {
         createChoices();
     }, [index, questions]);
 
-    const buttonBackground = (x) => {
+    const buttonBackground = (x:any) => {
         if(showAnswer && x === questions[index].answer){
             return "lightseagreen"
         }
-        if(showAnswer && selectedIndex === questions[index].choices.findIndex((z)=> z===x)){
+        if(showAnswer && selectedIndex === questions[index].choices.findIndex((z: any)=> z===x)){
             return "red"
         }
     }
 
-    const prepareData = (data) => {
-        const questions2 = data.flatMap(item =>
+    const prepareData = (data: any) => {
+        const questions2 = data.flatMap((item: any) =>
             {
                 return item.examples
             }
@@ -83,7 +84,7 @@ const Question = () => {
            <LuHelpCircle onClick={showModal} style={{marginLeft: 'auto'}} />
         </div>} bordered={false} style={{ padding: 16, marginTop:100, boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}>
             <Flex style={{ gap: 6, marginTop: 'auto', marginBottom: 60, flexDirection: "column"}}>
-                {choices.map((i, index3)=> <Button disabled={showAnswer} style={{flex:1, paddingBlock: 24, backgroundColor:buttonBackground(i, index3)}} onClick={()=> {
+                {choices.map((i, index3)=> <Button disabled={showAnswer} style={{flex:1, paddingBlock: 24, backgroundColor:buttonBackground(i)}} onClick={()=> {
                     setShowAnswer(true);
                     setSelectedIndex(index3);
                     setTimeout(()=> {

@@ -7,7 +7,7 @@ const Courses = () => {
     const navigate = useNavigate();
 
 
-    const navigation = (to, witch) => {
+    const navigation = (to: any, witch: any) => {
         console.log('1222')
         navigate(to, { state: { lektion: witch }});
     }
