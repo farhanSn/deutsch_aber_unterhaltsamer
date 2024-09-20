@@ -5,7 +5,7 @@ function Loading() {
 
 
     return (<div style={{flex:1,height: '100vh', display: "flex", flexDirection: 'column'}}>
-            <img style={{flex:1, objectFit:"fill"}} src={'src/assets/loading.jpg'} alt={""}/>
+            <img style={{flex:1, objectFit:"fill"}} src={'/loading.jpg'} alt={""}/>
             <span style={{position: 'absolute', bottom:10, insetInline: 0, color: "white"}}>
               Produced by Farhan Shayan
           </span>
