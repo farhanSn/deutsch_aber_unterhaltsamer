@@ -1,9 +1,9 @@
 #root {
   width: 100vw;
   height: 100vh;
-  background: whitesmoke;
+  background: darkgrey;
   margin: 0 0;
-  padding: 2px;
+  padding: 0;
   text-align: center;
 }
 
