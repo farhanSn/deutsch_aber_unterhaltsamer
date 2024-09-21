@@ -7,8 +7,8 @@ import { LuHelpCircle } from "react-icons/lu";
 
 const Question = () => {
     const {state} = useLocation();
-    const {lektion} = state;
-    console.log({lektion})
+    const {lektion, level} = state;
+    console.log({state})
     const [loading, setLoading] = useState(true);
     const [index, setIndex] = useState(0);
     const [choices, setChoices] = useState([0]);
@@ -28,7 +28,7 @@ const Question = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://server-farhanshn.ladeapp.com/data?level=b1&lektion=1');
+                const response = await fetch(`https://server-farhanshn.ladeapp.com/data?level=${level}&lektion=${lektion}`);
 
                 if (!response.ok) {
 

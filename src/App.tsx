@@ -22,8 +22,10 @@ function App() {
           <Routes>
               <Route path="/">
                   <Route index element={<Global />} />
-                  <Route path="/b1" element={<Courses />} />
+                  <Route path="/b1" element={<Courses level={"b1"}/>} />
                   <Route path="/b1/question" element={<Question />} />
+                  <Route path="/a2" element={<Courses level={"a2"}/>} />
+                  <Route path="/a2/question" element={<Question />} />
               </Route>
           </Routes>
       </div>
