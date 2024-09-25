@@ -8,7 +8,6 @@ import { LuHelpCircle } from "react-icons/lu";
 const Question = () => {
     const {state} = useLocation();
     const {lektion, level} = state;
-    console.log({state})
     const [loading, setLoading] = useState(true);
     const [index, setIndex] = useState(0);
     const [choices, setChoices] = useState([0]);
@@ -80,7 +79,7 @@ const Question = () => {
     return loading ? <span>Loading...</span> : <>
         <div style={{margin:0, paddingTop:24,height: '100vh', display: "flex", flexDirection: 'column', paddingInline:16}}>
         <Card title={<div style={{display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center'}}>
-            <span style={{marginLeft: 'auto', textWrap: "wrap"}}>{questions[index].sentence}</span>
+            <span style={{marginLeft: 'auto', textWrap: "wrap", wordWrap: 'break-word',overflowWrap: 'break-word', whiteSpace: 'normal'}}>{questions[index].sentence}</span>
            <LuHelpCircle onClick={showModal} style={{marginLeft: 'auto'}} />
         </div>} bordered={false} style={{ padding: 16, marginTop:100, boxShadow: "rgba(0, 0, 0, 0.24) 0px 3px 8px" }}>
             <Flex style={{ gap: 6, marginTop: 'auto', marginBottom: 60, flexDirection: "column"}}>
